@@ -1,7 +1,10 @@
 # Projet1-Reseaux
 
 # Python Package to run the file:
+ pyshark & dnspython
 
+ command to install them: 
+ 
  python3 -m pip install --user pyshark
  python3 -m pip install --user dnspython
 
