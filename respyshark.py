@@ -4,8 +4,8 @@ import dns.resolver
 # python3 -m pip install --user pyshark
 # python3 -m pip install --user dnspython
 
-# Change inside cap variable the path to your package.
-cap = pyshark.FileCapture('/Users/alecnet/Desktop/Appel+PartageEcranSamuel.pcapng')
+# Change inside cap variable the path to your package or others available in the record.
+cap = pyshark.FileCapture('record/Appel+PartageEcran.pcapng')
 
 # Change to the name of your app to filter it.
 filtre='microsoft-teams'
