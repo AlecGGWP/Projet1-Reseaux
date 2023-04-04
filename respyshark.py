@@ -9,8 +9,8 @@ cap  = pyshark.FileCapture('record/Appel+PartageEcran.pcapng')
 cap2 = pyshark.FileCapture('record/EnvoieFichier.pcapng')
 cap3 = pyshark.FileCapture('record/MessageRecordSpam.pcapng')
 cap4 = pyshark.FileCapture('record/Video+Partage.pcapng')
-packagelist = [cap]
-#,cap2,cap3,cap4
+packagelist = [cap,cap2,cap3,cap4]
+
 
 # Change to the name of your app to filter it.
 filtre='microsoft-teams'
