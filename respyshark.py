@@ -83,8 +83,17 @@ for capture in packagelist:
                 #dns2_names.add((str(packet.dns.resp_name).rstrip('.'),i))
                 dns_names.add(str(packet.dns.resp_name).rstrip('.'))
             i+=1
+        # Counting the number of connections to each domain
 
+dns_counts = {}
+for domain in dns_names:
+    count = 0
+    for packet in cap:
+        if 'dns' in packet and packet.dns.qry_name and str(packet.dns.qry_name).rstrip('.') == domain:
+            count += 1
+    dns_counts[domain] = count
 
+print("DNS_COUNTS:",dns_counts)
 print("Nombres IPV4:",ipv4)
 print("Nombres IPV6:",ipv6)
 print("Nombre DNS:",len(dns_names))
