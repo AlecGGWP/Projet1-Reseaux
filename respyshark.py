@@ -12,6 +12,7 @@ cap4 = pyshark.FileCapture('record/Video+Partage.pcapng')
 packagelist = [cap,cap2,cap3,cap4]
 
 
+
 # Change to the name of your app to filter it.
 filtre='microsoft-teams'
 
@@ -32,6 +33,7 @@ ipv4 = 0
 ipv6 = 0
 udp = 0
 tcp = 0
+tls = 0
 i = 0
 type_a = 0
 type_aaaa = 0
@@ -39,6 +41,7 @@ type_CNAME = 0
 type_ns = 0
 dns_names = set()
 auth_servers = set()
+tls_versions = set()
 
 #auth2_servers = set()
 #dns2_names = set()
@@ -51,6 +54,8 @@ auth_servers = set()
 for capture in packagelist:
 
     for packet in cap:
+        if 'tls' in packet:
+            tls+=1
 
         if 'udp' in packet:
             udp+=1
@@ -104,6 +109,6 @@ print("Nombre NS",type_ns)
 print("Nombres AUTH_Servers:",len(auth_servers))
 print("Nombres TCP:",tcp)
 print("Nombres UDP:",udp)
-
+print("Version obs TLS:",tls_versions)
 print("DNS_NAMES:",sorted(dns_names,key=by_numb),"\n")
 print("AUTH_SERVERS:",auth_servers,"\n")
